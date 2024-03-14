@@ -3,12 +3,12 @@ let User;
 
 const connectDatabase = async () => {
   try {
-    if (!user) {
-      User = mongoose.model("User", require("..models/userModel").Schema);
+    if (!User) {
+      User = mongoose.model("nodeUsers", require("../models/userModel.js").Schema);
     }
 
     await mongoose
-      .connect("")
+      .connect("mongodb+srv://samuel8:t4ImxkPNMXAhIrLt@users-nodejs.eyxgrp5.mongodb.net/test")
       .then(() => console.log("MongoDB connected"))
       .catch((error) => console.log(error));
 
