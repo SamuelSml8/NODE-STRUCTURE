@@ -4,9 +4,12 @@ const connectDB = require("./config/db.js");
 const routes = require("./routes/routes.js");
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
 connectDB();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/", routes);
 
