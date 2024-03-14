@@ -4,11 +4,16 @@ let User;
 const connectDatabase = async () => {
   try {
     if (!User) {
-      User = mongoose.model("nodeUsers", require("../models/userModel.js").Schema);
+      User = mongoose.model(
+        "nodeUsers",
+        require("../models/userModel.js").Schema
+      );
     }
 
     await mongoose
-      .connect("mongodb+srv://samuel8:t4ImxkPNMXAhIrLt@users-nodejs.eyxgrp5.mongodb.net/test")
+      .connect(
+        "mongodb+srv://samuel8:t4ImxkPNMXAhIrLt@users-nodejs.eyxgrp5.mongodb.net/test"
+      )
       .then(() => console.log("MongoDB connected"))
       .catch((error) => console.log(error));
 
